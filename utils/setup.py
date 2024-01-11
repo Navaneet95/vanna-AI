@@ -17,7 +17,7 @@ def setup_connexion():
     else:
         load_dotenv()
         vn.set_api_key(os.environ.get("VANNA_API_KEY"))
-        vn.set_model("vanna-increff-demo")
+        vn.set_model("vanna-increff-ai")
         vn.connect_to_sqlite(
             url=os.environ.get("url"),
         )
