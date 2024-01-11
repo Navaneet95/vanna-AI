@@ -1,5 +1,4 @@
-vanna[postgres]
+vanna[sqlite]
 streamlit
 streamlit_code_editor
 python-dotenv
-psycopg2-binary
