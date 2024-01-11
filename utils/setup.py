@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 def setup_connexion():
     if "vanna_api_key" in st.secrets and "url" in st.secrets:
         vn.set_api_key(st.secrets.get("vanna_api_key"))
-        vn.set_model("vanna-increff-demo")
+        vn.set_model("vanna-increff-ai")
         vn.connect_to_sqlite(
             host=st.secrets.get("url"),
 
