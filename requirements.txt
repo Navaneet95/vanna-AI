@@ -2,4 +2,3 @@ vanna[postgres]
 streamlit
 streamlit_code_editor
 python-dotenv
-psycopg2-binary
