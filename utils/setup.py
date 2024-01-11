@@ -4,7 +4,7 @@ import vanna as vn
 from dotenv import load_dotenv
 
 
-@st.cache_resource(ttl=3600,persist=True)
+@st.cache_resource(ttl=3600)
 def setup_connexion():
     if "vanna_api_key" in st.secrets and "url" in st.secrets:
         vn.set_api_key(st.secrets.get("vanna_api_key"))
