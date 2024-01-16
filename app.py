@@ -22,7 +22,7 @@ st.sidebar.checkbox("Show Chart", value=True, key="show_chart")
 st.sidebar.checkbox("Show Follow-up Questions", value=True, key="show_followup")
 st.sidebar.button("Rerun", on_click=setup_session_state, use_container_width=True)
 
-st.title("Increff MS AI")
+st.title("MS Data Assistant")
 st.sidebar.write(st.session_state)
 
 
@@ -31,7 +31,7 @@ def set_question(question):
 
 
 assistant_message_suggested = st.chat_message(
-    "assistant", avatar="https://ask.vanna.ai/static/img/vanna_circle.png"
+    "assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvcx3N3NZSKXOM2qwYtH6GLguEO6erUdnBTDV8V0qsw&s"
 )
 if assistant_message_suggested.button("Click to show suggested questions"):
     st.session_state["my_question"] = None
@@ -62,7 +62,7 @@ if my_question:
     if sql:
         if st.session_state.get("show_sql", True):
             assistant_message_sql = st.chat_message(
-                "assistant", avatar="https://ask.vanna.ai/static/img/vanna_circle.png"
+                "assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvcx3N3NZSKXOM2qwYtH6GLguEO6erUdnBTDV8V0qsw&s"
             )
             assistant_message_sql.code(sql, language="sql", line_numbers=True)
 
@@ -100,7 +100,7 @@ if my_question:
                 df = st.session_state.get("df")
                 assistant_message_table = st.chat_message(
                     "assistant",
-                    avatar="https://ask.vanna.ai/static/img/vanna_circle.png",
+                    avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvcx3N3NZSKXOM2qwYtH6GLguEO6erUdnBTDV8V0qsw&s",
                 )
                 if len(df) > 10:
                     assistant_message_table.text("First 10 rows of data")
@@ -113,7 +113,7 @@ if my_question:
             if st.session_state.get("show_plotly_code", False):
                 assistant_message_plotly_code = st.chat_message(
                     "assistant",
-                    avatar="https://ask.vanna.ai/static/img/vanna_circle.png",
+                    avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvcx3N3NZSKXOM2qwYtH6GLguEO6erUdnBTDV8V0qsw&s",
                 )
                 assistant_message_plotly_code.code(
                     code, language="python", line_numbers=True
@@ -144,7 +144,7 @@ if my_question:
                 if st.session_state.get("show_chart", True):
                     assistant_message_chart = st.chat_message(
                         "assistant",
-                        avatar="https://ask.vanna.ai/static/img/vanna_circle.png",
+                        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvcx3N3NZSKXOM2qwYtH6GLguEO6erUdnBTDV8V0qsw&s",
                     )
                     fig = generate_plot_cached(code=code, df=df)
                     if fig is not None:
@@ -155,7 +155,7 @@ if my_question:
                 if st.session_state.get("show_followup", True):
                     assistant_message_followup = st.chat_message(
                         "assistant",
-                        avatar="https://ask.vanna.ai/static/img/vanna_circle.png",
+                        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvcx3N3NZSKXOM2qwYtH6GLguEO6erUdnBTDV8V0qsw&s",
                     )
                     followup_questions = generate_followup_cached(
                         question=my_question, df=df
@@ -173,6 +173,6 @@ if my_question:
 
     else:
         assistant_message_error = st.chat_message(
-            "assistant", avatar="https://ask.vanna.ai/static/img/vanna_circle.png"
+            "assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvcx3N3NZSKXOM2qwYtH6GLguEO6erUdnBTDV8V0qsw&s"
         )
         assistant_message_error.error("I wasn't able to generate SQL for that question")
